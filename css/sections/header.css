@@ -6,16 +6,13 @@ header {
 }
 
 .header__container {
-    display: flex;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+    gap: 32px;
+    align-items: start;
 
     & p {
-        color: var(--n-600);
-    }
-
-    & span {
-        font-weight: 600;
-        color: var(--p-950);
+        color: var(--text-secondary);
     }
 }
 
@@ -27,18 +24,18 @@ header {
 
 .header__column--left {
     display: flex;
-    flex: 1;
     gap: 24px;
-    align-items: center;
+    align-items: flex-start;
 
     & .header__content--left {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
     }
 
     & .header__badge_container {
         display: flex;
+        flex-wrap: wrap;
         gap: 6px;
         text-align: center;
     }
@@ -46,31 +43,92 @@ header {
     & .badge {
         font-size: var(--caption-font-size);
         line-height: var(--caption-line-height);
-        color: var(--p-950);
+        color: var(--text-primary);
         padding: 4px 12px;
-        background-color: var(--p-50);
+        background-color: var(--surface-color);
+        border: 1px solid var(--border-color);
         border-radius: 4px;
-        /* line-clamp */
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        line-clamp: 1;
-        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    & p {
+        max-width: 38ch;
+        line-height: 1.65;
+    }
+
+    & p span {
+        color: var(--text-primary);
+        font-weight: 700;
     }
 }
 
 .header__column--right {
     display: flex;
-    flex: 1;
     flex-direction: column;
-    align-items: end;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 1.25rem;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 16px 28px -24px var(--shadow-color);
+
+    & p {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: baseline;
+        line-height: 1.5;
+    }
+
+    & p span:first-child {
+        color: var(--text-tertiary);
+        font-weight: 500;
+    }
+
+    & p span:last-child {
+        color: var(--text-primary);
+        font-weight: 600;
+        text-align: right;
+        word-break: break-word;
+    }
+
+    & p span:last-child a {
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+        text-decoration-thickness: 2px;
+        transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    & p span:last-child a:hover {
+        text-decoration-color: currentColor;
+    }
+}
+
+html[data-theme="dark"] .header__column--right p span:last-child a {
+    color: var(--p-450);
+    text-decoration-color: hsla(198, 81%, 63%, 0.65);
+}
+
+html[data-theme="dark"] .header__column--right p span:last-child a:hover {
+    color: var(--p-300);
+}
+
+html[data-theme="light"] .header__column--right p span:last-child a {
+    color: var(--p-700);
+    text-decoration-color: hsla(234, 56%, 51%, 0.45);
+}
+
+html[data-theme="light"] .header__column--right p span:last-child a:hover {
+    color: var(--p-800);
 }
 
 .header__img {
     border-radius: 100px;
-    width: 118px;
-    height: 118px;
+    width: 132px;
+    height: 132px;
     box-shadow:
         inset 0px -1px 1px hsla(0, 0%, 100%, 0.5),
         0 4px 6px -1px hsla(0, 0%, 0%, 0.2),

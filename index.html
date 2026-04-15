@@ -1,105 +1,158 @@
-<!DOCTYPE html>
-<html lang="vi">
+<!doctype html>
+<html lang="vi" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Mtikcode Simple Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>An Duc Anh | Frontend Developer Intern</title>
 
-    <link
-      rel="stylesheet"
-      href="css/main.css"
-    />
+    <link rel="stylesheet" href="css/main.css" />
 
-    <link
-      rel="stylesheet"
-      href="css/responsive.css"
-    />
+    <link rel="stylesheet" href="css/responsive.css" />
 
-    <link
-      rel="icon"
-      href="./assets/rocket-icon.ico"
-    />
+    <link rel="icon" href="./assets/rocket-icon.ico" />
 
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!--------------- 
-      Header
-    ----------------->
-    <header>
-      <div class="container header__container">
-        <!-- left column -->
+    <div class="site-controls container">
+      <div class="control-group">
+        <span class="control-label" data-i18n="control.theme">Theme</span>
+        <button
+          class="control-button"
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <span class="control-icon" id="themeIcon">🌙</span>
+          <span data-i18n="control.dark">Dark</span>
+        </button>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label" data-i18n="control.language">Language</span>
+        <div
+          class="language-switcher"
+          role="group"
+          aria-label="Language switcher"
+        >
+          <button class="control-button lang-button" id="langVi" type="button">
+            VI
+          </button>
+          <button class="control-button lang-button" id="langEn" type="button">
+            EN
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="site-menu container" aria-label="Primary">
+      <a
+        href="#ContactSection"
+        class="menu-link active"
+        data-section="ContactSection"
+        data-i18n="menu.contact"
+        >Liên hệ</a
+      >
+      <a
+        href="#AboutSection"
+        class="menu-link"
+        data-section="AboutSection"
+        data-i18n="menu.about"
+        >Giới thiệu</a
+      >
+      <a
+        href="#SkillsSection"
+        class="menu-link"
+        data-section="SkillsSection"
+        data-i18n="menu.skills"
+        >Kỹ năng</a
+      >
+      <a
+        href="#ProjectContainer"
+        class="menu-link"
+        data-section="ProjectContainer"
+        data-i18n="menu.projects"
+        >Dự án</a
+      >
+    </nav>
+
+    <header id="HomeSection">
+      <div class="container header__container" id="ContactSection">
         <div class="header__column--left">
-          <!-- avatar -->
           <div class="header__img"></div>
 
           <div class="header__content--left">
-            <h2 class="header__title">Mtikcode</h2>
+            <h2 class="header__title">An Duc Anh</h2>
             <div class="header__badge_container">
-              <div class="badge">Lập trình web, mobile app</div>
-              <div class="badge">Fullstack developer</div>
+              <div class="badge" data-i18n="header.badge.1">
+                Frontend Developer Intern
+              </div>
+              <div class="badge" data-i18n="header.badge.2">
+                Information Technology Student
+              </div>
             </div>
-            <p>
-              Mong muốn ứng tuyển vị trí <span>Junior Developer</span> trong lĩnh vực
-              phát triển web và mobile apps.
+            <p data-i18n-html="header.goal">
+              Mục tiêu của mình là tìm cơ hội
+              <span>thực tập Frontend Developer</span>
+              để áp dụng kiến thức vào thực tế, rèn kỹ năng làm việc nhóm và
+              tích lũy kinh nghiệm phát triển sản phẩm phần mềm.
             </p>
           </div>
         </div>
 
-        <!-- right column -->
         <div class="header__column--right">
-          <h2 class="header__title">Thông Tin Liên Hệ</h2>
+          <h2 class="header__title" data-i18n="header.contactTitle">
+            Thông Tin Liên Hệ
+          </h2>
           <p>
-            Gửi email cho mình tại:
-            <span>mtikcode@gmail.com</span>
+            <span data-i18n="header.email">Email:</span>
+            <span>anducanh125@gmail.com</span>
           </p>
           <p>
-            Gọi cho mình tại:
-            <span>0891234567</span>
+            <span data-i18n="header.phone">Điện thoại:</span>
+            <span>0868751074</span>
+          </p>
+          <p>
+            <span data-i18n="header.location">Khu vực:</span>
+            <span>Ha Noi</span>
+          </p>
+          <p>
+            <span>GitHub:</span>
+            <span>
+              <a
+                href="https://github.com/AnAnh2k"
+                target="_blank"
+                rel="noopener noreferrer"
+                >github.com/AnAnh2k</a
+              >
+            </span>
           </p>
         </div>
       </div>
     </header>
 
-    <!--------------------------------- 
-      About Me - Giới Thiệu Bản Thân
-    ----------------------------------->
-    <section class="aboutMe__section">
-      <!-- Hình động 2 bên -->
-      <img
-        src="./assets/rocket-icon.svg"
-        alt="rocket icon"
-      />
+    <section class="aboutMe__section" id="AboutSection">
+      <img src="./assets/rocket-icon.svg" alt="rocket icon" />
 
-      <img
-        src="./assets/laptop-icon.svg"
-        alt="laptop icon"
-      />
+      <img src="./assets/laptop-icon.svg" alt="laptop icon" />
 
-      <!-- Nội dung chính -->
       <div class="aboutMe__container">
         <div class="aboutMe__content_container">
-          <h1 class="section__title">Giới Thiệu Bản Thân</h1>
+          <h1 class="section__title" data-i18n="about.title">
+            Giới Thiệu Bản Thân
+          </h1>
 
-          <p class="section__description">
-            Xin chào! Mình là sinh viên năm cuối trường đại học CNTT. Mình có niềm
-            đam mê với công việc lập trình và vô cùng yêu thích việc tạo ra các trang
-            web và mobile app hiện đại và có tính ứng dụng cao.
+          <p class="section__description" data-i18n="about.description">
+            Mình là sinh viên Công nghệ Thông tin tại Hanoi Open University, có
+            nền tảng tốt về HTML, CSS, JavaScript và các framework hiện đại như
+            ReactJS, Next.js. Mình làm việc cẩn thận, có trách nhiệm, sẵn sàng
+            học nhanh và ưu tiên tạo ra giao diện rõ ràng, dễ dùng, kết nối tốt
+            với API thực tế.
           </p>
 
           <div class="CTA">
@@ -109,12 +162,14 @@
               rel="noopener noreferrer"
               class="primaryButton"
               download
+              data-i18n="about.cta.cv"
               >Tải CV</a
             >
 
             <a
               href="#ProjectContainer"
               class="outlineButton"
+              data-i18n="about.cta.project"
               >Xem Dự Án</a
             >
           </div>
@@ -122,579 +177,658 @@
       </div>
     </section>
 
-    <!--------------------------------- 
-      Skills - Kỹ Năng
-    ----------------------------------->
-    <section class="skills__section">
+    <section class="skills__section" id="SkillsSection">
       <div class="container skills__container">
-        <!-- header -->
         <div class="section__header">
-          <h1 class="section__title">Kỹ năng & Chuyên môn</h1>
+          <h1 class="section__title" data-i18n="skills.title">
+            Kỹ năng & Chuyên môn
+          </h1>
 
-          <p class="section__description">
-            Là một nhà phát triển web mới vào nghề, mình có nền tảng vững chắc về các
-            framework front-end như React và thư viện NextJS, và có kinh nghiệm làm
-            việc với các công nghệ back-end như Node.js và Express.
+          <p class="section__description" data-i18n="skills.description">
+            Tập trung vào phát triển giao diện web hiện đại, tích hợp API, quản
+            lý dữ liệu và triển khai ứng dụng full-stack ở quy mô học tập, cá
+            nhân và dự án thực tế.
           </p>
         </div>
 
-        <!-- grid -->
         <div class="skills__grid_container">
-          <!-- grid item 1 -->
           <div class="skills__grid_item"></div>
 
-          <!-- grid item 2 -->
           <div class="skills__grid_item">
             <div class="skills__grid_item_header">
               <div>
-                <img
-                  src="./assets/check-icon.svg"
-                  alt="check-icon"
-                />
-                <h2>Công cụ & Công nghệ</h2>
+                <img src="./assets/check-icon.svg" alt="check-icon" />
+                <h2 data-i18n="skills.tools.title">Công cụ & Công nghệ</h2>
               </div>
-              <p>
-                Thành thạo nhiều công cụ lập trình web hiện đại, có kinh nghiệm xây
-                dựng các ứng dụng web tương tác, thân thiện với người dùng và đam mê
-                viết mã sạch, dễ bảo trì.
-              </p>
+              <div class="skills__tech_lines">
+                <p data-i18n="skills.tools.frontend">
+                  Frontend: HTML/CSS, JavaScript, TypeScript, ReactJS, Next.js,
+                  Tailwind CSS, Bootstrap, Ant Design.
+                </p>
+                <p data-i18n="skills.tools.backend">
+                  Backend và API: RESTful API, Next.js API Routes, Prisma ORM,
+                  JWT Authentication.
+                </p>
+                <p data-i18n="skills.tools.database">
+                  Database & Triển khai: SQL Server, MySQL, PostgreSQL, MongoDB,
+                  Supabase, Vercel, Postman, Git.
+                </p>
+              </div>
             </div>
 
-            <!-- skill logos -->
             <div>
-              <!-- list 1 -->
               <div class="icons-list-wrapper">
                 <div class="icons-list">
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/C.svg"
-                      alt="C icon"
-                    />
-                    <span>C</span>
+                    <img src="./assets/icons/html.svg" alt="html icon" />
+                    <span>HTML</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/github.svg"
-                      alt="github icon"
-                    />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/css.svg"
-                      alt="CSS icon"
-                    />
+                    <img src="./assets/icons/css.svg" alt="css icon" />
                     <span>CSS</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/java.svg"
-                      alt="java icon"
-                    />
-                    <span>java</span>
+                    <img src="./assets/icons/JS.svg" alt="js icon" />
+                    <span>JavaScript</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/html.svg"
-                      alt="html icon"
-                    />
-                    <span>html</span>
+                    <img src="./assets/icons/react.svg" alt="react icon" />
+                    <span>ReactJS</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/node-js.svg"
-                      alt="nodejs icon"
-                    />
-                    <span>node js</span>
+                    <img src="./assets/icons/nextjs.svg" alt="nextjs icon" />
+                    <span>Next.js</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/JS.svg"
-                      alt="js icon"
-                    />
-                    <span>js</span>
+                    <img src="./assets/icons/node-js.svg" alt="node js icon" />
+                    <span>API Routes</span>
                   </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/react.svg"
-                      alt="react icon"
-                    />
-                    <span>react</span>
-                  </div>
-
                   <div class="icon-badges">
                     <img
                       src="./assets/icons/postgresql.svg"
                       alt="postgresql icon"
                     />
-                    <span>postgresql</span>
+                    <span>PostgreSQL</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/nextjs.svg"
-                      alt="nextjs icon"
-                    />
-                    <span>nextjs</span>
+                    <img src="./assets/icons/github.svg" alt="github icon" />
+                    <span>GitHub</span>
                   </div>
                 </div>
 
                 <div class="icons-list">
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/C.svg"
-                      alt="C icon"
-                    />
-                    <span>C</span>
+                    <img src="./assets/icons/html.svg" alt="html icon" />
+                    <span>HTML</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/github.svg"
-                      alt="github icon"
-                    />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/css.svg"
-                      alt="CSS icon"
-                    />
+                    <img src="./assets/icons/css.svg" alt="css icon" />
                     <span>CSS</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/java.svg"
-                      alt="java icon"
-                    />
-                    <span>java</span>
+                    <img src="./assets/icons/JS.svg" alt="js icon" />
+                    <span>TypeScript</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/html.svg"
-                      alt="html icon"
-                    />
-                    <span>html</span>
+                    <img src="./assets/icons/react.svg" alt="react icon" />
+                    <span>ReactJS</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/node-js.svg"
-                      alt="nodejs icon"
-                    />
-                    <span>node js</span>
+                    <img src="./assets/icons/nextjs.svg" alt="nextjs icon" />
+                    <span>Next.js</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/JS.svg"
-                      alt="js icon"
-                    />
-                    <span>js</span>
+                    <img src="./assets/icons/node-js.svg" alt="node js icon" />
+                    <span>Prisma ORM</span>
                   </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/react.svg"
-                      alt="react icon"
-                    />
-                    <span>react</span>
-                  </div>
-
                   <div class="icon-badges">
                     <img
                       src="./assets/icons/postgresql.svg"
                       alt="postgresql icon"
                     />
-                    <span>postgresql</span>
+                    <span>Databases</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/nextjs.svg"
-                      alt="nextjs icon"
-                    />
-                    <span>nextjs</span>
+                    <img src="./assets/icons/github.svg" alt="github icon" />
+                    <span>Vercel</span>
                   </div>
                 </div>
               </div>
 
-              <!-- list 2 -->
               <div class="icons-list-wrapper">
                 <div class="icons-list">
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/C.svg"
-                      alt="C icon"
-                    />
-                    <span>C</span>
+                    <img src="./assets/icons/html.svg" alt="html icon" />
+                    <span>Tailwind CSS</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/github.svg"
-                      alt="github icon"
-                    />
-                    <span>github</span>
+                    <img src="./assets/icons/css.svg" alt="css icon" />
+                    <span>Bootstrap</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/css.svg"
-                      alt="CSS icon"
-                    />
-                    <span>CSS</span>
+                    <img src="./assets/icons/JS.svg" alt="js icon" />
+                    <span>RESTful API</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/java.svg"
-                      alt="java icon"
-                    />
-                    <span>java</span>
+                    <img src="./assets/icons/react.svg" alt="react icon" />
+                    <span>Ant Design</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/html.svg"
-                      alt="html icon"
-                    />
-                    <span>html</span>
+                    <img src="./assets/icons/nextjs.svg" alt="nextjs icon" />
+                    <span>JWT Auth</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/node-js.svg"
-                      alt="nodejs icon"
-                    />
-                    <span>node js</span>
+                    <img src="./assets/icons/node-js.svg" alt="node js icon" />
+                    <span>Supabase</span>
                   </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/JS.svg"
-                      alt="js icon"
-                    />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/react.svg"
-                      alt="react icon"
-                    />
-                    <span>react</span>
-                  </div>
-
                   <div class="icon-badges">
                     <img
                       src="./assets/icons/postgresql.svg"
                       alt="postgresql icon"
                     />
-                    <span>postgresql</span>
+                    <span>MySQL</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/nextjs.svg"
-                      alt="nextjs icon"
-                    />
-                    <span>nextjs</span>
+                    <img src="./assets/icons/github.svg" alt="github icon" />
+                    <span>Postman</span>
                   </div>
                 </div>
 
                 <div class="icons-list">
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/C.svg"
-                      alt="C icon"
-                    />
-                    <span>C</span>
+                    <img src="./assets/icons/html.svg" alt="html icon" />
+                    <span>Tailwind CSS</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/github.svg"
-                      alt="github icon"
-                    />
-                    <span>github</span>
+                    <img src="./assets/icons/css.svg" alt="css icon" />
+                    <span>Bootstrap</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/css.svg"
-                      alt="CSS icon"
-                    />
-                    <span>CSS</span>
+                    <img src="./assets/icons/JS.svg" alt="js icon" />
+                    <span>RESTful API</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/java.svg"
-                      alt="java icon"
-                    />
-                    <span>java</span>
+                    <img src="./assets/icons/react.svg" alt="react icon" />
+                    <span>MVC Pattern</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/html.svg"
-                      alt="html icon"
-                    />
-                    <span>html</span>
+                    <img src="./assets/icons/nextjs.svg" alt="nextjs icon" />
+                    <span>SQL Server</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/node-js.svg"
-                      alt="nodejs icon"
-                    />
-                    <span>node js</span>
+                    <img src="./assets/icons/node-js.svg" alt="node js icon" />
+                    <span>MongoDB</span>
                   </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/JS.svg"
-                      alt="js icon"
-                    />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/react.svg"
-                      alt="react icon"
-                    />
-                    <span>react</span>
-                  </div>
-
                   <div class="icon-badges">
                     <img
                       src="./assets/icons/postgresql.svg"
                       alt="postgresql icon"
                     />
-                    <span>postgresql</span>
+                    <span>PostgreSQL</span>
                   </div>
                   <div class="icon-badges">
-                    <img
-                      src="./assets/icons/nextjs.svg"
-                      alt="nextjs icon"
-                    />
-                    <span>nextjs</span>
+                    <img src="./assets/icons/github.svg" alt="github icon" />
+                    <span>Git</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- grid item 3 -->
           <div class="skills__grid_item">
             <div class="skills__grid_item_header">
               <div>
-                <img
-                  src="./assets/check-icon.svg"
-                  alt="check icon"
-                />
-                <h2>Kỹ Năng Mềm</h2>
+                <img src="./assets/check-icon.svg" alt="check icon" />
+                <h2 data-i18n="skills.education.title">
+                  Học vấn & Kỹ năng mềm
+                </h2>
               </div>
-              <p>
-                Kỹ năng giao tiếp, cộng tác, và giải quyết vấn đề xuất sắc, với thái
-                độ chủ động và ham học hỏi, dễ dàng thích nghi trong môi trường làm
-                việc nhóm năng động.
+              <p data-i18n="skills.education.description">
+                Hanoi Open University (2022 - 2026). Kỹ năng mềm nổi bật gồm
+                thuyết trình, làm việc nhóm, làm việc độc lập và tinh thần chủ
+                động học hỏi. Tiếng Anh: TOEIC 650 (expected).
               </p>
             </div>
 
             <div class="softSkills__container">
               <div class="softSkills_badge">
-                <p>Giao tiếp chuyên nghiệp</p>
+                <p>Public speaking</p>
               </div>
 
               <div class="softSkills_badge">
-                <p>Quản lý thời gian hiệu quả</p>
+                <p>Teamwork</p>
               </div>
               <div class="softSkills_badge">
-                <p>Đáng tin cậy</p>
+                <p>Independent working</p>
               </div>
               <div class="softSkills_badge">
-                <p>Ham học hỏi</p>
+                <p>Detail-oriented</p>
               </div>
 
               <div class="softSkills__book_icons">
                 <img
-                  src="./assets/closed-book.svg"
-                  alt="closed book icon"
+                  src="./assets/graduation-cap-icon.svg"
+                  alt="graduation cap icon"
                 />
-                <img
-                  src="./assets/closed-book.svg"
-                  alt="closed book icon"
-                />
-                <img
-                  src="./assets/closed-book.svg"
-                  alt="closed book icon"
-                />
-                <img
-                  src="./assets/closed-book.svg"
-                  alt="closed book icon"
-                />
+                <img src="./assets/closed-book.svg" alt="closed book icon" />
+                <img src="./assets/closed-book.svg" alt="closed book icon" />
+                <img src="./assets/closed-book.svg" alt="closed book icon" />
               </div>
             </div>
           </div>
 
-          <!-- grid item 4 -->
           <div class="skills__grid_item"></div>
         </div>
       </div>
     </section>
 
-    <!--------------------------------- 
-      Projects - Dự Án
-    ----------------------------------->
-    <section
-      class="projects__section"
-      id="ProjectContainer"
-    >
+    <section class="projects__section" id="ProjectContainer">
       <div class="container projects_container">
-        <!-- header -->
         <div class="section__header">
-          <h1 class="section__title">Đồ Án Thực Chiến</h1>
-          <p class="section__description">
-            Bộ sưu tập dự án thực tập tại trường này giúp mình củng cố và hoàn thiện
-            những kỹ năng kỹ thuật cũng như khả năng giải quyết vấn đề một cách sáng
-            tạo.
+          <h1 class="section__title" data-i18n="projects.title">
+            Dự Án Nổi Bật
+          </h1>
+          <p class="section__description" data-i18n="projects.description">
+            Hai dự án trong CV thể hiện rõ định hướng Frontend và khả năng triển
+            khai full-stack, từ xây giao diện, tích hợp API, phân quyền người
+            dùng đến đưa sản phẩm lên môi trường thực tế.
           </p>
         </div>
 
-        <!-- cards -->
         <div class="projects__cards_container">
-          <a
-            href="https://github.com/sissyMai/mtikcode-simple-portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project1.jpg"
-                  alt="project1"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>dự án 1</h4>
-                <h3>Todo List</h3>
+          <article class="projects_cards">
+            <div class="projects__cards_wrapper">
+              <img
+                src="./assets/project1.png"
+                alt="Bao Dai Medical Station Portal"
+                class="projects__cards_img"
+              />
+            </div>
+            <div class="projects__cards_titles">
+              <h4 data-i18n="projects.card1.type">
+                Freelance / Real-world project
+              </h4>
+              <h3 data-i18n="projects.card1.title">
+                Bao Dai Medical Station Portal
+              </h3>
+              <p data-i18n="projects.card1.description">
+                Cổng thông tin và dashboard quản trị cho trạm y tế địa phương,
+                số hóa quản lý tài liệu, tin tức sức khỏe và quy trình hành
+                chính.
+              </p>
+              <p class="projects__stack">
+                Next.js, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL
+              </p>
+              <div class="projects__actions">
+                <a
+                  href="https://ttytbaodai.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project_action_button"
+                  data-i18n="projects.action.demo"
+                  >Xem Demo</a
+                >
+                <a
+                  href="https://github.com/AnAnh2k/ttytbaodai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project_action_button project_action_button--secondary"
+                  data-i18n="projects.action.source"
+                  >Mã nguồn</a
+                >
               </div>
             </div>
-          </a>
+          </article>
 
-          <a
-            href="https://github.com/sissyMai/mtikcode-simple-portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project2.jpg"
-                  alt="project1"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>dự án 2</h4>
-                <h3>trang thông tin công nghệ</h3>
+          <article class="projects_cards">
+            <div class="projects__cards_wrapper">
+              <img
+                src="./assets/project2.png"
+                alt="Data Management Dashboard"
+                class="projects__cards_img"
+              />
+            </div>
+            <div class="projects__cards_titles">
+              <h4 data-i18n="projects.card2.type">Personal project</h4>
+              <h3 data-i18n="projects.card2.title">
+                Data Management Dashboard
+              </h3>
+              <p data-i18n="projects.card2.description">
+                Dashboard quản lý dữ liệu dạng CRUD tích hợp RESTful API, định
+                tuyến bảo vệ bằng JWT và trạng thái giao diện phản hồi tốt.
+              </p>
+              <p class="projects__stack">
+                React.js, Vite, JavaScript, RESTful API, Git
+              </p>
+              <div class="projects__actions">
+                <a
+                  href="https://react-ultimate-frontend-pied.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project_action_button"
+                  data-i18n="projects.action.demo"
+                  >Xem Demo</a
+                >
+                <a
+                  href="https://github.com/AnAnh2k/react-vite-ducanh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project_action_button project_action_button--secondary"
+                  data-i18n="projects.action.source"
+                  >Mã nguồn</a
+                >
               </div>
             </div>
-          </a>
+          </article>
+        </div>
 
+        <div class="projects__repo_links">
           <a
-            href="https://github.com/sissyMai/mtikcode-simple-portfolio"
+            href="https://github.com/AnAnh2k/ttytbaodai"
             target="_blank"
             rel="noopener noreferrer"
+            class="project_link_chip"
           >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project3.jpg"
-                  alt="project1"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>dự án 3</h4>
-                <h3>spotify clone</h3>
-              </div>
-            </div>
+            <span data-i18n="projects.repo.1"
+              >Repository: AnAnh2k/ttytbaodai</span
+            >
           </a>
-
           <a
-            href="https://github.com/sissyMai/mtikcode-simple-portfolio"
+            href="https://github.com/AnAnh2k/react-vite-ducanh"
             target="_blank"
             rel="noopener noreferrer"
+            class="project_link_chip"
           >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project4.jpg"
-                  alt="project1"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>dự án 4</h4>
-                <h3>facebook clone</h3>
-              </div>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/sissyMai/mtikcode-simple-portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project5.jpg"
-                  alt="project1"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>dự án 5</h4>
-                <h3>thiết kế trang doanh nghiệp</h3>
-              </div>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/sissyMai/mtikcode-simple-portfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project6.jpg"
-                  alt="project1"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>dự án 6</h4>
-                <h3>Thiết kế web</h3>
-              </div>
-            </div>
+            <span data-i18n="projects.repo.2"
+              >Repository: AnAnh2k/react-vite-ducanh</span
+            >
           </a>
         </div>
       </div>
     </section>
 
-    <!--------------------------------- 
-      Footer
-    ----------------------------------->
-    <footer>
+    <button
+      id="backToTop"
+      class="back-to-top"
+      type="button"
+      aria-label="Back to top"
+      data-i18n="backToTop"
+    >
+      Lên đầu trang
+    </button>
+
+    <footer id="">
       <div class="container">
-        <p>© Mtikcode's Portfolio</p>
+        <p data-i18n="footer.copyright">© An Duc Anh Portfolio</p>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        const STORAGE_THEME = "portfolio-theme";
+        const STORAGE_LANG = "portfolio-language";
+        const root = document.documentElement;
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+        const langViButton = document.getElementById("langVi");
+        const langEnButton = document.getElementById("langEn");
+        const backToTopButton = document.getElementById("backToTop");
+        const menuLinks = Array.from(
+          document.querySelectorAll(".menu-link[data-section]")
+        );
+
+        const dictionary = {
+          vi: {
+            pageTitle: "An Duc Anh | Frontend Developer Intern",
+            "control.theme": "Giao diện",
+            "control.language": "Ngôn ngữ",
+            "control.dark": "Tối",
+            "control.light": "Sáng",
+            "header.badge.1": "Frontend Developer Intern",
+            "header.badge.2": "Information Technology Student",
+            "header.goal":
+              "Mục tiêu của mình là tìm cơ hội <span>thực tập Frontend Developer</span> để áp dụng kiến thức vào thực tế, rèn kỹ năng làm việc nhóm và tích lũy kinh nghiệm phát triển sản phẩm phần mềm.",
+            "header.contactTitle": "Thông Tin Liên Hệ",
+            "header.email": "Email:",
+            "header.phone": "Điện thoại:",
+            "header.location": "Khu vực:",
+            "about.title": "Giới Thiệu Bản Thân",
+            "about.description":
+              "Mình là sinh viên Công nghệ Thông tin tại Hanoi Open University, có nền tảng tốt về HTML, CSS, JavaScript và các framework hiện đại như ReactJS, Next.js. Mình làm việc cẩn thận, có trách nhiệm, sẵn sàng học nhanh và ưu tiên tạo ra giao diện rõ ràng, dễ dùng, kết nối tốt với API thực tế.",
+            "about.cta.cv": "Tải CV",
+            "about.cta.project": "Xem Dự Án",
+            "skills.title": "Kỹ năng & Chuyên môn",
+            "skills.description":
+              "Tập trung vào phát triển giao diện web hiện đại, tích hợp API, quản lý dữ liệu và triển khai ứng dụng full-stack ở quy mô học tập, cá nhân và dự án thực tế.",
+            "skills.tools.title": "Công cụ & Công nghệ",
+            "skills.tools.description":
+              "Frontend: HTML/CSS, JavaScript, TypeScript, ReactJS, Next.js, Tailwind CSS, Bootstrap, Ant Design. Backend và API: RESTful API, Next.js API Routes, Prisma ORM, JWT Authentication. Database và triển khai: SQL Server, MySQL, PostgreSQL, MongoDB, Supabase, Vercel, Postman, Git.",
+            "skills.tools.frontend":
+              "Frontend: HTML/CSS, JavaScript, TypeScript, ReactJS, Next.js, Tailwind CSS, Bootstrap, Ant Design.",
+            "skills.tools.backend":
+              "Backend và API: RESTful API, Next.js API Routes, Prisma ORM, JWT Authentication.",
+            "skills.tools.database":
+              "Database & Triển khai: SQL Server, MySQL, PostgreSQL, MongoDB, Supabase, Vercel, Postman, Git.",
+            "skills.education.title": "Học vấn & Kỹ năng mềm",
+            "skills.education.description":
+              "Hanoi Open University (2022 - 2026). Kỹ năng mềm nổi bật gồm thuyết trình, làm việc nhóm, làm việc độc lập và tinh thần chủ động học hỏi. Tiếng Anh: TOEIC 650 (expected).",
+            "projects.title": "Dự Án Nổi Bật",
+            "projects.description":
+              "Hai dự án trong CV thể hiện rõ định hướng Frontend và khả năng triển khai full-stack, từ xây giao diện, tích hợp API, phân quyền người dùng đến đưa sản phẩm lên môi trường thực tế.",
+            "projects.card1.type": "Freelance / Real-world project",
+            "projects.card1.title": "Bao Dai Medical Station Portal",
+            "projects.card1.description":
+              "Cổng thông tin và dashboard quản trị cho trạm y tế địa phương, số hóa quản lý tài liệu, tin tức sức khỏe và quy trình hành chính.",
+            "projects.card2.type": "Personal project",
+            "projects.card2.title": "Data Management Dashboard",
+            "projects.card2.description":
+              "Dashboard quản lý dữ liệu dạng CRUD tích hợp RESTful API, định tuyến bảo vệ bằng JWT và trạng thái giao diện phản hồi tốt.",
+            "projects.action.demo": "Xem Demo",
+            "projects.action.source": "Mã nguồn",
+            "projects.repo.1": "Repository: AnAnh2k/ttytbaodai",
+            "projects.repo.2": "Repository: AnAnh2k/react-vite-ducanh",
+            "menu.about": "Giới thiệu",
+            "menu.skills": "Kỹ năng",
+            "menu.projects": "Dự án",
+            "menu.contact": "Liên hệ",
+            backToTop: "Lên đầu trang",
+            "projects.card3.type": "Repository",
+            "projects.card3.title": "Clinic Portal Source",
+            "projects.card3.description":
+              "Source code dự án trạm y tế trong CV. CV ghi chú repository này đang ở trạng thái private.",
+            "projects.card4.type": "Repository",
+            "projects.card4.title": "Dashboard Source Code",
+            "projects.card4.description":
+              "Repository cho dự án CRUD dashboard với React và Vite, dùng để thể hiện khả năng xây giao diện, kết nối API và triển khai cá nhân.",
+            "footer.copyright": "© An Duc Anh Portfolio",
+          },
+          en: {
+            pageTitle: "An Duc Anh | Frontend Developer Intern",
+            "control.theme": "Theme",
+            "control.language": "Language",
+            "control.dark": "Dark",
+            "control.light": "Light",
+            "header.badge.1": "Frontend Developer Intern",
+            "header.badge.2": "Information Technology Student",
+            "header.goal":
+              "My goal is to secure a <span>Frontend Developer internship</span> to apply my knowledge in real projects, strengthen teamwork skills, and gain practical experience building software products.",
+            "header.contactTitle": "Contact Information",
+            "header.email": "Email:",
+            "header.phone": "Phone:",
+            "header.location": "Location:",
+            "about.title": "About Me",
+            "about.description":
+              "I am an Information Technology student at Hanoi Open University with a solid foundation in HTML, CSS, JavaScript, and modern frameworks such as ReactJS and Next.js. I work carefully, take responsibility, learn quickly, and focus on building clear user interfaces that integrate effectively with real APIs.",
+            "about.cta.cv": "Download CV",
+            "about.cta.project": "View Projects",
+            "skills.title": "Skills & Expertise",
+            "skills.description":
+              "Focused on modern web frontend development, API integration, data handling, and full-stack deployment across academic, personal, and real-world projects.",
+            "skills.tools.title": "Tools & Technologies",
+            "skills.tools.description":
+              "Frontend: HTML/CSS, JavaScript, TypeScript, ReactJS, Next.js, Tailwind CSS, Bootstrap, Ant Design. Backend and API: RESTful API, Next.js API Routes, Prisma ORM, JWT Authentication. Database and deployment: SQL Server, MySQL, PostgreSQL, MongoDB, Supabase, Vercel, Postman, Git.",
+            "skills.tools.frontend":
+              "Frontend: HTML/CSS, JavaScript, TypeScript, ReactJS, Next.js, Tailwind CSS, Bootstrap, Ant Design.",
+            "skills.tools.backend":
+              "Backend & API: RESTful API, Next.js API Routes, Prisma ORM, JWT Authentication.",
+            "skills.tools.database":
+              "Database & Deployment: SQL Server, MySQL, PostgreSQL, MongoDB, Supabase, Vercel, Postman, Git.",
+            "skills.education.title": "Education & Soft Skills",
+            "skills.education.description":
+              "Hanoi Open University (2022 - 2026). Strong soft skills include public speaking, teamwork, independent work, and proactive learning. English: TOEIC 650 (expected).",
+            "projects.title": "Featured Projects",
+            "projects.description":
+              "The two projects in my CV highlight my frontend direction and full-stack delivery ability, from UI development and API integration to user authorization and production deployment.",
+            "projects.card1.type": "Freelance / Real-world project",
+            "projects.card1.title": "Bao Dai Medical Station Portal",
+            "projects.card1.description":
+              "An information portal and management dashboard for a local medical station, digitizing document management, health news, and administrative workflows.",
+            "projects.card2.type": "Personal project",
+            "projects.card2.title": "Data Management Dashboard",
+            "projects.card2.description":
+              "A CRUD data management dashboard with RESTful API integration, JWT-protected routing, and responsive UI states.",
+            "projects.action.demo": "Live Demo",
+            "projects.action.source": "Source Code",
+            "projects.repo.1": "Repository: AnAnh2k/ttytbaodai",
+            "projects.repo.2": "Repository: AnAnh2k/react-vite-ducanh",
+            "menu.about": "About",
+            "menu.skills": "Skills",
+            "menu.projects": "Projects",
+            "menu.contact": "Contact",
+            backToTop: "Back to top",
+            "projects.card3.type": "Repository",
+            "projects.card3.title": "Clinic Portal Source",
+            "projects.card3.description":
+              "Source code for the medical station project in my CV. The CV notes this repository is currently private.",
+            "projects.card4.type": "Repository",
+            "projects.card4.title": "Dashboard Source Code",
+            "projects.card4.description":
+              "Repository for a React + Vite CRUD dashboard project to demonstrate UI implementation, API integration, and personal deployment workflow.",
+            "footer.copyright": "© An Duc Anh Portfolio",
+          },
+        };
+
+        const resolveTheme = () => {
+          const saved = localStorage.getItem(STORAGE_THEME);
+          if (saved === "dark" || saved === "light") {
+            return saved;
+          }
+          return "dark";
+        };
+
+        const resolveLanguage = () => {
+          const saved = localStorage.getItem(STORAGE_LANG);
+          if (saved === "vi" || saved === "en") {
+            return saved;
+          }
+          return "vi";
+        };
+
+        const setTheme = (theme) => {
+          root.setAttribute("data-theme", theme);
+          localStorage.setItem(STORAGE_THEME, theme);
+
+          const isDark = theme === "dark";
+          themeIcon.textContent = isDark ? "🌙" : "☀️";
+          const language = root.getAttribute("lang") || "vi";
+          const textKey = isDark ? "control.dark" : "control.light";
+          const themeText = themeToggle.querySelector("span[data-i18n]");
+          if (themeText) {
+            themeText.textContent = dictionary[language][textKey];
+          }
+        };
+
+        const setLanguage = (language) => {
+          root.setAttribute("lang", language);
+          localStorage.setItem(STORAGE_LANG, language);
+          document.title = dictionary[language].pageTitle;
+
+          document.querySelectorAll("[data-i18n]").forEach((node) => {
+            const key = node.getAttribute("data-i18n");
+            const value = dictionary[language][key];
+            if (value) {
+              node.textContent = value;
+            }
+          });
+
+          document.querySelectorAll("[data-i18n-html]").forEach((node) => {
+            const key = node.getAttribute("data-i18n-html");
+            const value = dictionary[language][key];
+            if (value) {
+              node.innerHTML = value;
+            }
+          });
+
+          langViButton.classList.toggle("active", language === "vi");
+          langEnButton.classList.toggle("active", language === "en");
+
+          const currentTheme = root.getAttribute("data-theme") || "dark";
+          const currentThemeKey =
+            currentTheme === "dark" ? "control.dark" : "control.light";
+          const themeText = themeToggle.querySelector("span[data-i18n]");
+          if (themeText) {
+            themeText.textContent = dictionary[language][currentThemeKey];
+          }
+        };
+
+        themeToggle.addEventListener("click", function () {
+          const currentTheme = root.getAttribute("data-theme") || "dark";
+          setTheme(currentTheme === "dark" ? "light" : "dark");
+        });
+
+        langViButton.addEventListener("click", function () {
+          setLanguage("vi");
+        });
+
+        langEnButton.addEventListener("click", function () {
+          setLanguage("en");
+        });
+
+        const updateActiveMenu = () => {
+          const offset = 160;
+          let activeId = "ContactSection";
+
+          for (const link of menuLinks) {
+            const sectionId = link.getAttribute("data-section");
+            const section = document.getElementById(sectionId);
+            if (!section) continue;
+            const top = section.offsetTop - offset;
+            if (window.scrollY >= top) {
+              activeId = sectionId;
+            }
+          }
+
+          menuLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("data-section") === activeId
+            );
+          });
+        };
+
+        const updateBackToTopVisibility = () => {
+          if (!backToTopButton) return;
+          backToTopButton.classList.toggle("show", window.scrollY > 360);
+        };
+
+        if (backToTopButton) {
+          backToTopButton.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+
+        window.addEventListener("scroll", function () {
+          updateBackToTopVisibility();
+          updateActiveMenu();
+        });
+
+        const defaultLanguage = resolveLanguage();
+        const defaultTheme = resolveTheme();
+        setLanguage(defaultLanguage);
+        setTheme(defaultTheme);
+        updateBackToTopVisibility();
+        updateActiveMenu();
+      })();
+    </script>
   </body>
 </html>

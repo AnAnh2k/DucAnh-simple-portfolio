@@ -7,57 +7,61 @@
 .projects__cards_container {
     display: grid;
     margin: 0 auto;
-    max-width: 90%;
-    grid-template-columns: repeat(auto-fit, minmax(auto, 340px));
-    grid-gap: 32px;
+    width: min(100%, 1080px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
     justify-content: center;
     align-content: center;
 }
 
 .projects_cards {
-    border: 1px solid hsla(var(--p-700-code), 0.1);
-    border-radius: 24px;
-    background: var(--foreground-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: var(--surface-raised);
     overflow: clip;
-    box-shadow: 1px 4px 6px -1px hsla(var(--p-950-code), 0.1),
-        1px 2px 4px -2px hsla(var(--p-950-code), 0.1);
-    transition: all 0.5s ease;
+    box-shadow: 1px 4px 8px -2px var(--shadow-color),
+        1px 2px 6px -2px var(--shadow-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
     &:hover {
-        box-shadow: 0 15px 40px hsla(var(--p-950-code), 0.2);
-        transform: scale(1.05) skew(-1deg, -1deg);
+        box-shadow: 0 20px 30px -20px var(--shadow-color);
+        transform: translateY(-4px);
     }
 }
 
 .projects__cards_wrapper {
-    background: hsla(var(--p-700-code), 0.1);
-    padding: 28px;
+    background: hsla(var(--p-700-code), 0.16);
+    padding: 16px;
     border-start-start-radius: 0.25rem;
 }
 
 .projects__cards_img {
-    width: 284px;
-    height: 284px;
+    width: 100%;
+    height: 188px;
     object-fit: cover;
-    border-radius: 24px;
+    border-radius: 14px;
     transition: transform 0.5s ease-in-out;
 
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
 }
 
 .projects__cards_titles {
     display: flex;
     flex-direction: column;
-    padding: 28px 32px;
-    gap: 4px;
+    padding: 18px 20px 20px;
+    gap: 8px;
+    flex: 1;
 
     & h4 {
         font-size: var(--caption-font-size);
         line-height: var(--caption-line-height);
         text-transform: uppercase;
-        color: var(--n-500);
+        color: var(--text-tertiary);
     }
 
     & h3 {
@@ -65,7 +69,7 @@
         line-height: var(--h3-line-height);
         font-weight: 500;
         text-transform: capitalize;
-        color: var(--p-950);
+        color: var(--text-primary);
         /* line clamp */
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -73,4 +77,77 @@
         line-clamp: 1;
         overflow: hidden;
     }
+
+    & p {
+        color: var(--text-secondary);
+        line-height: 1.55;
+    }
+
+    & p:first-of-type {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow: hidden;
+    }
+}
+
+.projects__stack {
+    font-size: var(--caption-font-size);
+    color: var(--text-tertiary) !important;
+}
+
+.projects__actions {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project_action_button {
+    padding: 0.56rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: var(--main-gradient-color);
+    color: #fff;
+    font-weight: 600;
+    font-size: var(--caption-font-size);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.project_action_button:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.project_action_button--secondary {
+    background: transparent;
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+}
+
+.projects__repo_links {
+    margin: 18px auto 0;
+    width: min(100%, 1080px);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project_link_chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    background: var(--surface-color);
+    font-size: var(--caption-font-size);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.project_link_chip:hover {
+    border-color: var(--border-strong);
+    color: var(--text-primary);
 }
